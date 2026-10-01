@@ -6,11 +6,6 @@ transition: morph
 ---
 
 import HeroTBL2 from "@components/HeroTBL2.astro";
-import MetricCard from "@components/MetricCard.astro";
-import FactoryMap from "@components/FactoryMap.astro";
-import DeploymentFlow from "@components/DeploymentFlow.astro";
-import SiteZoom from "@components/SiteZoom.astro";
-import FinalSystem from "@components/FinalSystem.astro";
 
 <HeroTBL2 />
 
@@ -21,6 +16,8 @@ Intro : présenter TBL2 comme un système de déploiement industriel vivant, pas
 ---
 layout: full
 ---
+
+import MetricCard from "@components/MetricCard.astro";
 
 <div style={{ padding: "52px", color: "#f8fbff" }}>
   <p style={{ color: "#ffd900", letterSpacing: ".16em", textTransform: "uppercase", fontWeight: 900, margin: "0 0 16px" }}>Scale test</p>
@@ -40,6 +37,8 @@ Cliquer trois fois : le message est le ratio entre couverture mondiale et taille
 layout: full
 ---
 
+import FactoryMap from "@components/FactoryMap.astro";
+
 <FactoryMap />
 
 <!--
@@ -49,6 +48,8 @@ Carte volontairement stylisée pour le POC : elle servira ensuite à brancher de
 ---
 layout: full
 ---
+
+import DeploymentFlow from "@components/DeploymentFlow.astro";
 
 <DeploymentFlow />
 
@@ -60,6 +61,8 @@ Ici on raconte le passage du besoin usine à la stabilisation post-déploiement.
 layout: full
 ---
 
+import SiteZoom from "@components/SiteZoom.astro";
+
 <SiteZoom />
 
 <!--
@@ -69,6 +72,8 @@ Slide focus : remplacer CNO / Kingston / ALE / UMO par les cas exacts à présen
 ---
 layout: full
 ---
+
+import FinalSystem from "@components/FinalSystem.astro";
 
 <FinalSystem />
 
