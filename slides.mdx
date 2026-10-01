@@ -3,6 +3,7 @@ title: "TBL2 Deployment"
 theme: cosmic
 duration: 12min
 transition: morph
+layout: full
 ---
 
 import HeroTBL2 from "@components/HeroTBL2.astro";
@@ -19,7 +20,7 @@ layout: full
 
 import MetricCard from "@components/MetricCard.astro";
 
-<div style={{ padding: "52px", color: "#f8fbff" }}>
+<div style={{ position: "absolute", inset: 0, boxSizing: "border-box", padding: "52px", color: "#f8fbff", background: "radial-gradient(circle at 50% 60%, rgba(0,86,179,.35), transparent 48%),linear-gradient(135deg,#051025,#07162b)", overflow: "hidden" }}>
   <p style={{ color: "#ffd900", letterSpacing: ".16em", textTransform: "uppercase", fontWeight: 900, margin: "0 0 16px" }}>Scale test</p>
   <h2 style={{ fontSize: "76px", lineHeight: ".95", letterSpacing: "-.06em", margin: "0 0 58px", maxWidth: "900px" }}>Make the scale instantly understandable</h2>
   <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "24px" }}>
