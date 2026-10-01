@@ -1,0 +1,26 @@
+{
+  "name": "tbl2-astro-slides",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro-slides dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "mcp": "astro-slides mcp-server"
+  },
+  "dependencies": {
+    "@astro-slides/cli": "^0.6.0",
+    "@astro-slides/client": "^0.6.0",
+    "@astro-slides/core": "^0.6.0",
+    "@astrojs/mdx": "^4.3.0",
+    "@astrojs/react": "^4.3.0",
+    "astro": "^5.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=22.18.0"
+  }
+}
