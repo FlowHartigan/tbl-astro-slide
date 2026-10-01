@@ -1,0 +1,32 @@
+---
+const { value, label, hint = "" } = Astro.props;
+---
+<div class="metric-card">
+  <strong>{value}</strong>
+  <span>{label}</span>
+  {hint && <em>{hint}</em>}
+</div>
+<style>
+.metric-card {
+  min-width: 250px;
+  min-height: 190px;
+  padding: 28px;
+  border-radius: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: linear-gradient(145deg, rgba(255,255,255,.14), rgba(255,255,255,.045));
+  border: 1px solid rgba(255,255,255,.16);
+  box-shadow: 0 20px 70px rgba(0,0,0,.22);
+  animation: cardIn .72s cubic-bezier(.2,.8,.2,1) both;
+}
+.metric-card strong {
+  font-size: clamp(62px, 7vw, 104px);
+  line-height: .88;
+  letter-spacing: -.07em;
+  color: #ffd900;
+}
+.metric-card span { font-size: 28px; font-weight: 900; color: #f8fbff; }
+.metric-card em { font-size: 18px; color: rgba(248,251,255,.68); font-style: normal; }
+@keyframes cardIn { from { opacity: 0; transform: translateY(28px) scale(.96); } to { opacity: 1; transform: translateY(0) scale(1); } }
+</style>
