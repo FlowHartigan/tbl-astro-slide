@@ -1,0 +1,277 @@
+<section class="bibendum-shell">
+  <div class="headline">
+    <p>TBL2 in motion</p>
+    <h2>TBL2 passes from one Michelin side to the other</h2>
+  </div>
+
+  <div class="character character-left" aria-label="Stylized Michelin Bibendum on the left">
+    <div class="bib-head">
+      <span class="eye e1"></span>
+      <span class="eye e2"></span>
+      <span class="smile"></span>
+    </div>
+    <div class="bib-body">
+      <span class="ring r1"></span>
+      <span class="ring r2"></span>
+      <span class="ring r3"></span>
+      <span class="ring r4"></span>
+      <span class="ring r5"></span>
+    </div>
+    <div class="arm arm-out left-throw"></div>
+    <div class="arm arm-back"></div>
+    <div class="leg leg-a"></div>
+    <div class="leg leg-b"></div>
+  </div>
+
+  <div class="character character-right" aria-label="Stylized Michelin Bibendum on the right">
+    <div class="bib-head">
+      <span class="eye e1"></span>
+      <span class="eye e2"></span>
+      <span class="smile"></span>
+    </div>
+    <div class="bib-body">
+      <span class="ring r1"></span>
+      <span class="ring r2"></span>
+      <span class="ring r3"></span>
+      <span class="ring r4"></span>
+      <span class="ring r5"></span>
+    </div>
+    <div class="arm arm-out right-catch"></div>
+    <div class="arm arm-back"></div>
+    <div class="leg leg-a"></div>
+    <div class="leg leg-b"></div>
+  </div>
+
+  <div class="ground-line"></div>
+
+  <div class="tire-lane" aria-label="TBL2 tire rolling between the two Bibendum figures">
+    <div class="tire-carrier">
+      <div class="tire">
+        <div class="hub"><span>TBL2</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.bibendum-shell {
+  position:absolute;
+  inset:0;
+  overflow:hidden;
+  color:#f8fbff;
+  background:
+    radial-gradient(circle at 50% 60%, rgba(0,86,179,.35), transparent 48%),
+    linear-gradient(135deg,#051025,#07162b);
+}
+
+.headline {
+  position:absolute;
+  left:72px;
+  top:60px;
+  z-index:10;
+}
+.headline p {
+  margin:0 0 12px;
+  color:#ffd900;
+  text-transform:uppercase;
+  letter-spacing:.16em;
+  font-weight:900;
+}
+.headline h2 {
+  margin:0;
+  max-width:980px;
+  font-size:clamp(46px,4.5vw,74px);
+  line-height:.95;
+  letter-spacing:-.06em;
+}
+
+.character {
+  position:absolute;
+  bottom:105px;
+  width:320px;
+  height:470px;
+  z-index:6;
+  filter:drop-shadow(0 24px 28px rgba(0,0,0,.22));
+}
+.character-left { left:82px; }
+.character-right { right:82px; transform:scaleX(-1); }
+
+.bib-head {
+  position:absolute;
+  left:50%;
+  top:0;
+  width:112px;
+  height:104px;
+  transform:translateX(-50%);
+  border-radius:52% 52% 48% 48%;
+  background:#f7f9fc;
+  box-shadow:inset 0 -9px 0 rgba(6,18,40,.08);
+  z-index:5;
+}
+.eye {
+  position:absolute;
+  top:39px;
+  width:8px;
+  height:13px;
+  border-radius:999px;
+  background:#061228;
+}
+.eye.e1 { left:32px; }
+.eye.e2 { right:32px; }
+.smile {
+  position:absolute;
+  left:50%;
+  bottom:19px;
+  width:32px;
+  height:15px;
+  transform:translateX(-50%);
+  border-bottom:4px solid #061228;
+  border-radius:0 0 20px 20px;
+}
+
+.bib-body {
+  position:absolute;
+  left:50%;
+  top:79px;
+  width:220px;
+  height:260px;
+  transform:translateX(-50%);
+}
+.ring {
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  height:48px;
+  border-radius:999px;
+  background:#f7f9fc;
+  box-shadow:inset 0 -9px 0 rgba(6,18,40,.08),0 2px 0 rgba(255,255,255,.35);
+}
+.r1{top:0;width:138px}
+.r2{top:43px;width:174px}
+.r3{top:87px;width:205px}
+.r4{top:132px;width:192px}
+.r5{top:177px;width:158px}
+
+.arm {
+  position:absolute;
+  top:126px;
+  width:34px;
+  height:142px;
+  border-radius:999px;
+  background:#f7f9fc;
+  box-shadow:inset 0 -7px 0 rgba(6,18,40,.08);
+  transform-origin:top center;
+}
+.arm-out { right:26px; transform:rotate(-58deg); }
+.arm-back { left:31px; transform:rotate(27deg); }
+.leg {
+  position:absolute;
+  bottom:8px;
+  width:38px;
+  height:126px;
+  border-radius:999px;
+  background:#f7f9fc;
+  box-shadow:inset 0 -7px 0 rgba(6,18,40,.08);
+  transform-origin:top center;
+}
+.leg-a { left:102px; transform:rotate(8deg); }
+.leg-b { right:102px; transform:rotate(-8deg); }
+
+.ground-line {
+  position:absolute;
+  left:70px;
+  right:70px;
+  bottom:95px;
+  height:2px;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.16),transparent);
+}
+
+.tire-lane {
+  position:absolute;
+  left:360px;
+  right:360px;
+  bottom:148px;
+  height:150px;
+  z-index:8;
+}
+.tire-carrier {
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:132px;
+  height:132px;
+  animation:travel 5s cubic-bezier(.45,.05,.55,.95) infinite alternate;
+}
+.tire {
+  position:relative;
+  width:132px;
+  height:132px;
+  border-radius:50%;
+  background:radial-gradient(circle at center,#10151d 0 33%,#06090d 34% 54%,#171c23 55% 63%,#050607 64% 100%);
+  border:8px solid #252a31;
+  box-shadow:0 18px 28px rgba(0,0,0,.34), inset 0 0 0 3px rgba(255,255,255,.04);
+  animation:spin 1.05s linear infinite;
+}
+.tire::before {
+  content:"";
+  position:absolute;
+  inset:-7px;
+  border-radius:50%;
+  border:5px dashed rgba(255,255,255,.18);
+}
+.tire::after {
+  content:"";
+  position:absolute;
+  inset:12px;
+  border-radius:50%;
+  border:2px solid rgba(255,255,255,.08);
+}
+.hub {
+  position:absolute;
+  inset:27px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:radial-gradient(circle,#ffe44a 0%,#ffd900 68%,#d9b900 100%);
+  box-shadow:inset 0 0 18px rgba(255,255,255,.28),0 0 24px rgba(255,217,0,.18);
+}
+.hub span {
+  color:#061228;
+  font-weight:1000;
+  font-size:24px;
+  letter-spacing:-.06em;
+}
+
+.left-throw { animation:leftArm 5s ease-in-out infinite alternate; }
+.right-catch { animation:rightArm 5s ease-in-out infinite alternate; }
+
+@keyframes travel {
+  0% { left:0; transform:translateY(0) scale(1); }
+  8% { transform:translateY(-12px) scale(1.03); }
+  50% { transform:translateY(0) scale(1); }
+  92% { transform:translateY(-12px) scale(1.03); }
+  100% { left:calc(100% - 132px); transform:translateY(0) scale(1); }
+}
+@keyframes spin { to { transform:rotate(360deg); } }
+@keyframes leftArm {
+  0%,12% { transform:rotate(-58deg); }
+  20%,100% { transform:rotate(-28deg); }
+}
+@keyframes rightArm {
+  0%,80% { transform:rotate(-28deg); }
+  88%,100% { transform:rotate(-58deg); }
+}
+
+@media (max-width:1500px) {
+  .character-left { left:34px; }
+  .character-right { right:34px; }
+  .character { transform:scale(.88); transform-origin:bottom center; }
+  .character-right { transform:scaleX(-1) scale(.88); }
+  .tire-lane { left:280px; right:280px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tire-carrier,.tire,.left-throw,.right-catch { animation:none; }
+  .tire-carrier { left:calc(50% - 66px); }
+}
+</style>
