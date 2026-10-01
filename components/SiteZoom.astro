@@ -15,12 +15,12 @@
   </div>
 </section>
 <style>
-.site-shell { width:100%; min-height:620px; border-radius:30px; overflow:hidden; display:grid; grid-template-columns:.9fr 1.1fr; background:linear-gradient(135deg,#f7f9fc,#e9f0fa); color:#061228; }
-.left { padding:58px; }.left p { margin:0 0 12px; color:#0056b3; text-transform:uppercase; letter-spacing:.16em; font-weight:900; }
+.site-shell { position:absolute; inset:0; width:100%; height:100%; min-height:0; overflow:hidden; display:grid; grid-template-columns:.9fr 1.1fr; background:radial-gradient(circle at 50% 60%, rgba(0,86,179,.35), transparent 48%),linear-gradient(135deg,#051025,#07162b); color:#f8fbff; }
+.left { padding:58px; position:relative; z-index:2; }.left p { margin:0 0 12px; color:#ffd900; text-transform:uppercase; letter-spacing:.16em; font-weight:900; }
 h2 { margin:0; font-size:clamp(42px,5.5vw,74px); line-height:.96; letter-spacing:-.06em; }
-.stack { margin-top:58px; display:grid; gap:18px; }.stack div { padding:20px 22px; border-radius:22px; background:#fff; box-shadow:0 18px 48px rgba(0,44,98,.1); display:flex; gap:18px; align-items:center; animation:slide .7s ease both; }.stack div:nth-child(2){animation-delay:.15s}.stack div:nth-child(3){animation-delay:.3s}
+.stack { margin-top:58px; display:grid; gap:18px; }.stack div { padding:20px 22px; border-radius:22px; background:rgba(255,255,255,.09); border:1px solid rgba(255,255,255,.14); box-shadow:0 18px 48px rgba(0,0,0,.18); display:flex; gap:18px; align-items:center; animation:slide .7s ease both; backdrop-filter:blur(10px); }.stack div:nth-child(2){animation-delay:.15s}.stack div:nth-child(3){animation-delay:.3s}
 .stack strong { width:42px; height:42px; border-radius:999px; display:grid; place-items:center; background:#ffd900; color:#061228; }.stack span { font-size:22px; font-weight:800; }
-.radar { position:relative; min-height:620px; background:radial-gradient(circle at 50% 50%,#0d2a59 0%,#07162c 48%,#040b16 100%); overflow:hidden; }
+.radar { position:relative; height:100%; overflow:hidden; background:radial-gradient(circle at 50% 50%,rgba(13,42,89,.62) 0%,rgba(7,22,44,.38) 48%,rgba(4,11,22,.08) 100%); }
 .ring { position:absolute; inset:50%; border-radius:999px; border:1px solid rgba(255,255,255,.22); transform:translate(-50%,-50%); animation:pulse 4s ease-in-out infinite; }.r1{width:220px;height:220px}.r2{width:400px;height:400px;animation-delay:.45s}.r3{width:580px;height:580px;animation-delay:.9s}
 .site-dot { position:absolute; left:50%; top:50%; width:24px; height:24px; background:#ffd900; border-radius:999px; transform:translate(-50%,-50%); box-shadow:0 0 0 16px rgba(255,217,0,.16),0 0 46px rgba(255,217,0,.95); }
 .label { position:absolute; color:#f8fbff; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.18); border-radius:999px; padding:12px 16px; font-size:18px; font-weight:900; backdrop-filter:blur(8px); animation:floatIn .8s ease both; }.l1{left:48%;top:30%}.l2{right:16%;top:47%;animation-delay:.2s}.l3{left:18%;bottom:27%;animation-delay:.4s}.l4{right:28%;bottom:18%;animation-delay:.6s}
