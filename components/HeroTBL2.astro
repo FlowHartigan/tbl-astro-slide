@@ -1,0 +1,115 @@
+<section class="hero-shell">
+  <div class="halo halo-a"></div>
+  <div class="halo halo-b"></div>
+  <div class="grid-lines"></div>
+  <div class="hero-content">
+    <p class="eyebrow">Industrial IT deployment system</p>
+    <h1>TBL2 Deployment</h1>
+    <p class="subtitle">From factory needs to global deployment rhythm.</p>
+    <div class="ticker" aria-label="TBL2 key metrics">
+      <span>40 factories</span>
+      <span>500 instances</span>
+      <span>20 people</span>
+    </div>
+  </div>
+  <div class="orbit orbit-1"></div>
+  <div class="orbit orbit-2"></div>
+  <div class="orbit orbit-3"></div>
+</section>
+
+<style>
+.hero-shell {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 620px;
+  overflow: hidden;
+  color: #f8fbff;
+  background:
+    radial-gradient(circle at 25% 30%, rgba(35, 123, 255, .35), transparent 34%),
+    radial-gradient(circle at 80% 70%, rgba(255, 215, 0, .23), transparent 32%),
+    linear-gradient(135deg, #050914 0%, #07152c 48%, #031021 100%);
+  border-radius: 30px;
+}
+.grid-lines {
+  position: absolute;
+  inset: 0;
+  opacity: .25;
+  background-image:
+    linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px);
+  background-size: 56px 56px;
+  transform: perspective(600px) rotateX(58deg) translateY(140px) scale(1.4);
+  transform-origin: 50% 80%;
+  animation: drift 18s linear infinite;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 92px 84px;
+  max-width: 980px;
+}
+.eyebrow {
+  margin: 0 0 26px;
+  color: #ffd900;
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  font-weight: 800;
+  font-size: 22px;
+  animation: rise .8s ease both;
+}
+h1 {
+  margin: 0;
+  max-width: 880px;
+  font-size: clamp(78px, 11vw, 148px);
+  line-height: .86;
+  letter-spacing: -.07em;
+  animation: rise .9s .12s ease both;
+}
+.subtitle {
+  margin: 34px 0 0;
+  max-width: 690px;
+  font-size: 34px;
+  line-height: 1.2;
+  color: rgba(248,251,255,.76);
+  animation: rise .9s .24s ease both;
+}
+.ticker {
+  display: flex;
+  gap: 18px;
+  margin-top: 54px;
+  flex-wrap: wrap;
+}
+.ticker span {
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(255,255,255,.08);
+  backdrop-filter: blur(12px);
+  border-radius: 999px;
+  padding: 16px 22px;
+  font-size: 22px;
+  font-weight: 800;
+  animation: pop .72s ease both;
+}
+.ticker span:nth-child(1) { animation-delay: .46s; }
+.ticker span:nth-child(2) { animation-delay: .62s; }
+.ticker span:nth-child(3) { animation-delay: .78s; }
+.halo { position: absolute; border-radius: 999px; filter: blur(12px); opacity: .65; }
+.halo-a { width: 430px; height: 430px; right: -80px; top: -100px; background: rgba(255,217,0,.16); }
+.halo-b { width: 520px; height: 520px; left: -140px; bottom: -180px; background: rgba(0,86,179,.22); }
+.orbit {
+  position: absolute;
+  right: 110px;
+  top: 120px;
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 999px;
+  transform: rotate(-22deg);
+  animation: pulse 4s ease-in-out infinite;
+}
+.orbit-1 { width: 330px; height: 160px; }
+.orbit-2 { width: 440px; height: 220px; top: 170px; right: 40px; animation-delay: .4s; }
+.orbit-3 { width: 540px; height: 270px; top: 225px; right: -40px; animation-delay: .8s; }
+@keyframes rise { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes pop { from { opacity: 0; transform: translateY(18px) scale(.94); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes drift { from { background-position: 0 0; } to { background-position: 56px 56px; } }
+@keyframes pulse { 0%,100% { opacity: .24; transform: rotate(-22deg) scale(1); } 50% { opacity: .58; transform: rotate(-22deg) scale(1.04); } }
+</style>
