@@ -6,10 +6,18 @@
     <span>TBL2</span>
   </div>
 
-  <div class="pill p1"><span>Factories</span></div>
-  <div class="pill p2"><span>Roadmap</span></div>
-  <div class="pill p3"><span>Instances</span></div>
-  <div class="pill p4"><span>Support</span></div>
+  <div class="orbiter o1">
+    <div class="orbiter-radius"><div class="pill">Factories</div></div>
+  </div>
+  <div class="orbiter o2">
+    <div class="orbiter-radius"><div class="pill">Roadmap</div></div>
+  </div>
+  <div class="orbiter o3">
+    <div class="orbiter-radius"><div class="pill">Instances</div></div>
+  </div>
+  <div class="orbiter o4">
+    <div class="orbiter-radius"><div class="pill">Support</div></div>
+  </div>
 
   <div class="copy">
     <p>Final direction</p>
@@ -80,22 +88,33 @@
   pointer-events:none;
 }
 .orbit-track-outer {
-  width:980px;
-  height:610px;
+  width:930px;
+  height:930px;
   border:1px solid rgba(255,255,255,.10);
 }
 .orbit-track-inner {
-  width:760px;
-  height:470px;
+  width:720px;
+  height:720px;
   border:1px dashed rgba(255,217,0,.08);
 }
 
-.pill {
-  --orbit-duration: 18s;
+.orbiter {
+  --duration:18s;
+  --delay:0s;
   position:absolute;
-  left:0;
-  top:0;
+  left:50%;
+  top:50%;
+  width:0;
+  height:0;
   z-index:7;
+  animation:orbitSpin var(--duration) linear infinite;
+  animation-delay:var(--delay);
+}
+.orbiter-radius {
+  transform:translateX(465px);
+}
+.pill {
+  transform:translate(-50%,-50%);
   padding:18px 26px;
   border-radius:999px;
   background:rgba(255,255,255,.11);
@@ -106,15 +125,13 @@
   font-size:22px;
   font-weight:900;
   white-space:nowrap;
-  offset-path:ellipse(490px 305px at 50vw 50vh);
-  offset-rotate:0deg;
-  animation:orbit var(--orbit-duration) linear infinite, pillIn .8s ease both;
+  animation:counterSpin var(--duration) linear infinite, pillIn .8s ease both;
+  animation-delay:var(--delay), .15s;
 }
-
-.p1 { offset-distance:0%; animation-delay:0s, .12s; }
-.p2 { offset-distance:25%; animation-delay:-4.5s, .24s; }
-.p3 { offset-distance:50%; animation-delay:-9s, .36s; }
-.p4 { offset-distance:75%; animation-delay:-13.5s, .48s; }
+.o1 { --delay:0s; }
+.o2 { --delay:-4.5s; }
+.o3 { --delay:-9s; }
+.o4 { --delay:-13.5s; }
 
 .copy {
   position:absolute;
@@ -145,17 +162,26 @@
   0%,100% { box-shadow:0 0 45px rgba(255,217,0,.42),0 0 110px rgba(255,217,0,.20); }
   50% { box-shadow:0 0 62px rgba(255,217,0,.58),0 0 145px rgba(255,217,0,.28); }
 }
+@keyframes orbitSpin {
+  from { transform:rotate(0deg); }
+  to { transform:rotate(360deg); }
+}
+@keyframes counterSpin {
+  from { transform:translate(-50%,-50%) rotate(0deg); }
+  to { transform:translate(-50%,-50%) rotate(-360deg); }
+}
 @keyframes pillIn {
   from { opacity:0; filter:blur(8px); }
   to { opacity:1; filter:blur(0); }
 }
-@keyframes orbit {
-  from { offset-distance:0%; }
-  to { offset-distance:100%; }
-}
 
 @media (prefers-reduced-motion: reduce) {
+  .orbiter { animation:none; }
   .pill { animation:pillIn .4s ease both; }
+  .o1 { transform:rotate(0deg); }
+  .o2 { transform:rotate(90deg); }
+  .o3 { transform:rotate(180deg); }
+  .o4 { transform:rotate(270deg); }
   .system-core { animation:coreIn .5s ease both; }
 }
 </style>
