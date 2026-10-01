@@ -1,21 +1,161 @@
 <section class="final-shell">
-  <div class="system-core">TBL2</div>
-  <div class="pill p1">Factories</div>
-  <div class="pill p2">Instances</div>
-  <div class="pill p3">Deployment</div>
-  <div class="pill p4">Support</div>
-  <div class="pill p5">Roadmap</div>
+  <div class="orbit-track orbit-track-outer"></div>
+  <div class="orbit-track orbit-track-inner"></div>
+
+  <div class="system-core">
+    <span>TBL2</span>
+  </div>
+
+  <div class="pill p1"><span>Factories</span></div>
+  <div class="pill p2"><span>Roadmap</span></div>
+  <div class="pill p3"><span>Instances</span></div>
+  <div class="pill p4"><span>Support</span></div>
+
   <div class="copy">
     <p>Final direction</p>
     <h2>A living deployment system, not a static PowerPoint</h2>
   </div>
 </section>
+
 <style>
-.final-shell { position:relative; width:100%; min-height:620px; border-radius:30px; overflow:hidden; background:radial-gradient(circle at 50% 46%,rgba(255,217,0,.20),transparent 28%),linear-gradient(135deg,#050914,#071a35); color:#f8fbff; }
-.system-core { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:260px; height:260px; border-radius:50%; display:grid; place-items:center; font-size:72px; font-weight:1000; letter-spacing:-.08em; color:#061228; background:#ffd900; box-shadow:0 0 80px rgba(255,217,0,.45); animation:coreIn 1s cubic-bezier(.2,.8,.2,1) both; }.system-core:before { content:""; position:absolute; inset:-70px; border:1px solid rgba(255,255,255,.16); border-radius:50%; animation:rotate 14s linear infinite; }
-.pill { position:absolute; padding:18px 22px; border-radius:999px; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.16); backdrop-filter:blur(10px); font-size:22px; font-weight:900; animation:pillIn .8s ease both; }.p1{left:15%;top:28%}.p2{right:14%;top:30%;animation-delay:.12s}.p3{left:20%;bottom:20%;animation-delay:.24s}.p4{right:18%;bottom:22%;animation-delay:.36s}.p5{left:50%;top:14%;transform:translateX(-50%);animation-delay:.48s}
-.copy { position:absolute; left:58px; bottom:52px; max-width:680px; }.copy p { margin:0 0 10px; color:#ffd900; letter-spacing:.16em; text-transform:uppercase; font-weight:900; }.copy h2 { margin:0; font-size:clamp(40px,4.8vw,68px); line-height:.98; letter-spacing:-.06em; }
-@keyframes coreIn { from { opacity:0; transform:translate(-50%,-50%) scale(.72); } to { opacity:1; transform:translate(-50%,-50%) scale(1); } }
-@keyframes pillIn { from { opacity:0; filter:blur(8px); } to { opacity:1; filter:blur(0); } }
-@keyframes rotate { to { transform:rotate(360deg); } }
+.final-shell {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  min-height:0;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255,217,0,.20), transparent 23%),
+    radial-gradient(circle at 78% 22%, rgba(41,126,255,.10), transparent 28%),
+    linear-gradient(135deg,#050914 0%,#071a35 100%);
+  color:#f8fbff;
+}
+
+.system-core {
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  width:280px;
+  height:280px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  font-size:76px;
+  font-weight:1000;
+  letter-spacing:-.08em;
+  color:#061228;
+  background:#ffd900;
+  box-shadow:
+    0 0 45px rgba(255,217,0,.42),
+    0 0 110px rgba(255,217,0,.20);
+  z-index:5;
+  animation:coreIn 1s cubic-bezier(.2,.8,.2,1) both, corePulse 4.8s ease-in-out 1s infinite;
+}
+
+.system-core::before,
+.system-core::after {
+  content:"";
+  position:absolute;
+  border-radius:50%;
+  pointer-events:none;
+}
+.system-core::before {
+  inset:-70px;
+  border:1px solid rgba(255,255,255,.18);
+  box-shadow:0 0 40px rgba(255,217,0,.08) inset;
+}
+.system-core::after {
+  inset:-130px;
+  border:1px solid rgba(255,217,0,.10);
+}
+
+.orbit-track {
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  pointer-events:none;
+}
+.orbit-track-outer {
+  width:980px;
+  height:610px;
+  border:1px solid rgba(255,255,255,.10);
+}
+.orbit-track-inner {
+  width:760px;
+  height:470px;
+  border:1px dashed rgba(255,217,0,.08);
+}
+
+.pill {
+  --orbit-duration: 18s;
+  position:absolute;
+  left:0;
+  top:0;
+  z-index:7;
+  padding:18px 26px;
+  border-radius:999px;
+  background:rgba(255,255,255,.11);
+  border:1px solid rgba(255,255,255,.20);
+  box-shadow:0 12px 35px rgba(0,0,0,.18);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  font-size:22px;
+  font-weight:900;
+  white-space:nowrap;
+  offset-path:ellipse(490px 305px at 50vw 50vh);
+  offset-rotate:0deg;
+  animation:orbit var(--orbit-duration) linear infinite, pillIn .8s ease both;
+}
+
+.p1 { offset-distance:0%; animation-delay:0s, .12s; }
+.p2 { offset-distance:25%; animation-delay:-4.5s, .24s; }
+.p3 { offset-distance:50%; animation-delay:-9s, .36s; }
+.p4 { offset-distance:75%; animation-delay:-13.5s, .48s; }
+
+.copy {
+  position:absolute;
+  left:72px;
+  bottom:68px;
+  max-width:640px;
+  z-index:8;
+}
+.copy p {
+  margin:0 0 12px;
+  color:#ffd900;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  font-weight:900;
+}
+.copy h2 {
+  margin:0;
+  font-size:clamp(46px,4.2vw,72px);
+  line-height:.95;
+  letter-spacing:-.06em;
+}
+
+@keyframes coreIn {
+  from { opacity:0; transform:translate(-50%,-50%) scale(.72); }
+  to { opacity:1; transform:translate(-50%,-50%) scale(1); }
+}
+@keyframes corePulse {
+  0%,100% { box-shadow:0 0 45px rgba(255,217,0,.42),0 0 110px rgba(255,217,0,.20); }
+  50% { box-shadow:0 0 62px rgba(255,217,0,.58),0 0 145px rgba(255,217,0,.28); }
+}
+@keyframes pillIn {
+  from { opacity:0; filter:blur(8px); }
+  to { opacity:1; filter:blur(0); }
+}
+@keyframes orbit {
+  from { offset-distance:0%; }
+  to { offset-distance:100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pill { animation:pillIn .4s ease both; }
+  .system-core { animation:coreIn .5s ease both; }
+}
 </style>
