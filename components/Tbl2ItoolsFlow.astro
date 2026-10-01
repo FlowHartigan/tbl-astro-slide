@@ -1,0 +1,171 @@
+<section class="flow-loop-shell">
+  <div class="flow-header">
+    <p>Message flow</p>
+    <h2>TBL2 → iTools</h2>
+  </div>
+
+  <div class="flow-stage">
+    <div class="system-box tbl2-box">TBL2</div>
+
+    <div class="transfer-lane" aria-label="Message 2105 flowing from TBL2 to iTools">
+      <div class="link-line"></div>
+      <div class="packet">2105</div>
+    </div>
+
+    <div class="system-box itools-box">iTools</div>
+  </div>
+</section>
+
+<style>
+.flow-loop-shell {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  overflow:hidden;
+  color:#f8fbff;
+  background:
+    radial-gradient(circle at 50% 60%, rgba(0,86,179,.35), transparent 48%),
+    linear-gradient(135deg,#051025,#07162b);
+}
+
+.flow-header {
+  position:absolute;
+  left:72px;
+  top:64px;
+  z-index:4;
+}
+.flow-header p {
+  margin:0 0 10px;
+  color:#ffd900;
+  text-transform:uppercase;
+  letter-spacing:.16em;
+  font-weight:900;
+}
+.flow-header h2 {
+  margin:0;
+  font-size:clamp(48px,5vw,78px);
+  line-height:.95;
+  letter-spacing:-.06em;
+}
+
+.flow-stage {
+  position:absolute;
+  inset:0;
+  display:grid;
+  grid-template-columns:1fr 1.35fr 1fr;
+  align-items:center;
+  gap:54px;
+  padding:180px 120px 90px;
+  box-sizing:border-box;
+}
+
+.system-box {
+  height:250px;
+  border-radius:28px;
+  display:grid;
+  place-items:center;
+  font-size:64px;
+  line-height:1;
+  font-weight:1000;
+  letter-spacing:-.06em;
+  border:1px solid rgba(255,255,255,.18);
+  box-shadow:0 24px 70px rgba(0,0,0,.22);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  position:relative;
+  z-index:2;
+}
+
+.tbl2-box {
+  background:rgba(255,255,255,.09);
+  color:#f8fbff;
+}
+.itools-box {
+  background:#ffd900;
+  color:#061228;
+  box-shadow:0 24px 70px rgba(0,0,0,.22),0 0 70px rgba(255,217,0,.12);
+}
+
+.transfer-lane {
+  position:relative;
+  height:250px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.link-line {
+  position:relative;
+  width:100%;
+  height:8px;
+  border-radius:999px;
+  background:linear-gradient(90deg,rgba(255,217,0,.88),rgba(75,183,255,.8));
+  box-shadow:0 0 26px rgba(75,183,255,.18);
+}
+.link-line::after {
+  content:"";
+  position:absolute;
+  right:-2px;
+  top:50%;
+  transform:translateY(-50%);
+  width:0;
+  height:0;
+  border-left:20px solid #4bb7ff;
+  border-top:11px solid transparent;
+  border-bottom:11px solid transparent;
+}
+
+.packet {
+  position:absolute;
+  left:0;
+  top:50%;
+  padding:16px 24px;
+  border-radius:999px;
+  background:#ffd900;
+  color:#061228;
+  font-size:30px;
+  font-weight:1000;
+  letter-spacing:.03em;
+  box-shadow:0 12px 32px rgba(0,0,0,.28),0 0 26px rgba(255,217,0,.42);
+  animation:messageTravel 3.1s linear infinite;
+  will-change:left,opacity,transform;
+  z-index:3;
+}
+
+@keyframes messageTravel {
+  0% {
+    left:0%;
+    opacity:0;
+    transform:translate(-50%,-50%) scale(.82);
+  }
+  7% {
+    opacity:1;
+    transform:translate(-50%,-50%) scale(1);
+  }
+  84% {
+    left:96%;
+    opacity:1;
+    transform:translate(-50%,-50%) scale(1);
+  }
+  92% {
+    left:100%;
+    opacity:0;
+    transform:translate(-50%,-50%) scale(.82);
+  }
+  100% {
+    left:100%;
+    opacity:0;
+    transform:translate(-50%,-50%) scale(.82);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .packet {
+    animation:none;
+    left:50%;
+    opacity:1;
+    transform:translate(-50%,-50%);
+  }
+}
+</style>
