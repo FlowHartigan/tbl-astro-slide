@@ -18,6 +18,7 @@ pnpm build
 ```
 
 Le projet est prévu pour être déployé directement sur Vercel.
+Le build est également vérifié automatiquement par GitHub Actions.
 
 ## POC slides
 
